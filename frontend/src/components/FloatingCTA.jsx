@@ -42,7 +42,7 @@ export default function FloatingCTA() {
           <a
             href="#contact"
             onClick={handleClick}
-            className="group flex items-center gap-2.5 px-5 py-3 rounded-full bg-gradient-to-r from-[#fef08a] via-[#c5a059] to-[#9a7b38] p-[1px] shadow-[0_2px_10px_rgba(197,160,89,0.3)] hover:shadow-[0_4px_20px_rgba(197,160,89,0.5)] transition-all duration-300 active:scale-95"
+            className="group flex items-center rounded-full bg-gradient-to-r from-[#fef08a] via-[#c5a059] to-[#9a7b38] p-[1.5px] shadow-[0_2px_10px_rgba(197,160,89,0.3)] hover:shadow-[0_4px_20px_rgba(197,160,89,0.5)] transition-all duration-300 active:scale-95"
           >
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#000000]/95 text-white font-medium text-sm group-hover:bg-[#111111] transition-colors">
               <span className="relative flex h-2 w-2">

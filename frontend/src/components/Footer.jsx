@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, Check, Send } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -21,10 +22,58 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#000000] border-t border-white/10 relative overflow-hidden text-zinc-300 text-sm">
-      {/* Background glowing gradients */}
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#c5a059]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#9a7b38]/10 rounded-full blur-[140px] pointer-events-none" />
+    <footer className="bg-[#000000] relative overflow-hidden text-zinc-300 text-sm">
+      {/* Double Horizontal Accent Line Above Footer */}
+      <div className="w-full relative z-20 space-y-2 py-2">
+        <div className="w-full h-[2.5px] bg-gradient-to-r from-transparent via-[#c5a059] to-transparent shadow-[0_0_12px_rgba(197,160,89,0.7)]" />
+        <div className="w-full h-[1.5px] bg-gradient-to-r from-transparent via-[#c5a059]/60 to-transparent" />
+      </div>
+
+      {/* VIBRANT CONTINUOUS MOVING AMBIENT BACKGROUND */}
+
+      {/* 1. Primary Gold Ambient Glowing Orb */}
+      <motion.div
+        animate={{
+          x: [-90, 90, -90],
+          y: [-50, 60, -50],
+          scale: [0.95, 1.2, 0.95],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#c5a059]/20 via-amber-500/15 to-[#9a7b38]/20 rounded-full blur-[130px] pointer-events-none z-0"
+      />
+
+      {/* 2. Secondary Warm Light Orb */}
+      <motion.div
+        animate={{
+          x: [90, -90, 90],
+          y: [50, -60, 50],
+          scale: [1.2, 0.85, 1.2],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-0 right-1/4 w-[450px] h-[450px] bg-gradient-to-br from-[#fef08a]/15 via-[#c5a059]/15 to-transparent rounded-full blur-[120px] pointer-events-none z-0"
+      />
+
+      {/* 3. Moving Grid Pattern */}
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "48px 48px"],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05912_1px,transparent_1px),linear-gradient(to_bottom,#c5a05912_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none z-0"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-12 border-b border-white/10">

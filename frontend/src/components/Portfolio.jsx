@@ -16,6 +16,7 @@ const PROJECTS = [
     desc: "Next-gen crypto & wealth management dashboard with real-time analytics and dark-mode glassmorphic UI.",
     metric: "+340% Conversions",
     visualGradient: "from-blue-600 via-indigo-600 to-purple-800",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     tags: ["Next.js", "Tailwind CSS", "Figma", "Fintech"],
     details: "Re-engineered Nexa's core digital presence. Designed an intuitive onboarding flow, responsive dark dashboard, and custom interactive data visualization charts.",
   },
@@ -27,6 +28,7 @@ const PROJECTS = [
     desc: "Complete luxury brand identity, bespoke typography, gradient color palette, and 3D product visual assets.",
     metric: "Global Redesign Award",
     visualGradient: "from-purple-600 via-pink-600 to-rose-800",
+    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1000&auto=format&fit=crop",
     tags: ["Brand Identity", "Logo Design", "3D Motion", "Typography"],
     details: "Crafted a distinctive visual identity for Luma Studio. Created primary logo systems, brand manual, social templates, and physical print collateral.",
   },
@@ -38,6 +40,7 @@ const PROJECTS = [
     desc: "Cinematic promotional campaign, high-energy YouTube edits, sound design, and custom motion graphics.",
     metric: "2.4M Views",
     visualGradient: "from-sky-500 via-cyan-600 to-teal-800",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop",
     tags: ["4K Video Editing", "Sound Design", "Kinetic FX", "YouTube"],
     details: "Produced a series of high-converting product commercial reels and YouTube video edits that resulted in over 2.4 million organic video views.",
   },
@@ -49,6 +52,7 @@ const PROJECTS = [
     desc: "High-performance marketing website with interactive product previews, bento grid layout, and instant lead capture.",
     metric: "4.8s Avg Dwell Time",
     visualGradient: "from-zinc-800 via-purple-900 to-black",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
     tags: ["SaaS Website", "React", "Interactive UI", "Lead Gen"],
     details: "Built Vanta's web application platform with micro-interactions, dark glassmorphism, SEO architecture, and seamless CRM integrations.",
   },
@@ -60,6 +64,7 @@ const PROJECTS = [
     desc: "High-CTR Instagram carousels, TikTok ad templates, and LinkedIn infographics designed for explosive engagement.",
     metric: "+180% Engagement Rate",
     visualGradient: "from-pink-600 via-rose-600 to-purple-900",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
     tags: ["Social Media", "Carousel Design", "Ad Creatives", "Instagram"],
     details: "Designed over 50+ custom social media assets and high-performing ad creatives that drove record engagement across Instagram and TikTok.",
   },
@@ -71,6 +76,7 @@ const PROJECTS = [
     desc: "Psychology-backed YouTube thumbnails engineered for high click-through rates and instant visual impact.",
     metric: "14.2% CTR Peak",
     visualGradient: "from-amber-500 via-orange-600 to-red-800",
+    image: "https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?q=80&w=1000&auto=format&fit=crop",
     tags: ["YouTube Thumbnail", "Photoshop 3D", "CTR Optimization"],
     details: "Designed custom 3D composite YouTube thumbnails for Hyperion Motion's channel, boosting average channel CTR from 5.4% to 14.2%.",
   },
@@ -218,15 +224,20 @@ export default function Portfolio() {
                 className="group glass-card rounded-3xl overflow-hidden border border-white/10 relative cursor-pointer flex flex-col justify-between bg-[#111111] hover:bg-gradient-to-b hover:from-[#1c1810] hover:to-[#110f0a] hover:border-[#c5a059]/60 hover:shadow-[0_10px_35px_rgba(197,160,89,0.2)] transition-all duration-300"
               >
                 {/* Visual Preview Banner */}
-                <div
-                  className={`h-56 w-full bg-gradient-to-br ${project.visualGradient} p-6 relative overflow-hidden flex flex-col justify-between group-hover:scale-[1.02] transition-transform duration-500`}
-                >
-                  {/* Subtle Grid Pattern Overlay */}
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-30" />
+                <div className="h-56 w-full relative overflow-hidden flex flex-col justify-between p-6 group-hover:scale-[1.02] transition-transform duration-500">
+                  {/* Clear & Vivid Online Background Image */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  {/* Gradient Scrim Overlay for crisp text contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
 
                   {/* Top Bar inside image card */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white border border-white/15">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-white border border-white/20">
                       {project.category}
                     </span>
                     <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 backdrop-blur-md">
@@ -235,9 +246,9 @@ export default function Portfolio() {
                   </div>
 
                   {/* Mockup Center Element */}
-                  <div className="z-10 bg-black/40 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-2xl flex items-center justify-between">
+                  <div className="z-10 bg-black/70 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-2xl flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-sky-400" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#c5a059]" />
                       <span className="text-xs font-mono font-bold text-white tracking-wide">
                         {project.title}
                       </span>
@@ -302,14 +313,19 @@ export default function Portfolio() {
               </button>
 
               {/* Large Visual Header */}
-              <div
-                className={`h-48 rounded-2xl bg-gradient-to-br ${selectedProject.visualGradient} p-6 relative overflow-hidden mb-6 flex flex-col justify-between`}
-              >
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-black/60 text-white w-fit border border-white/20">
+              <div className="h-52 rounded-2xl relative overflow-hidden mb-6 p-6 flex flex-col justify-between">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20" />
+
+                <span className="relative z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-white w-fit border border-white/20">
                   {selectedProject.category} • {selectedProject.type}
                 </span>
-                <div>
-                  <h3 className="text-2xl font-bold text-white drop-shadow">
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-white drop-shadow-md">
                     {selectedProject.title}
                   </h3>
                   <p className="text-xs text-zinc-200">{selectedProject.metric}</p>

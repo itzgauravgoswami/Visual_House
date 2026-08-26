@@ -7,8 +7,64 @@ import { ArrowRight, MessageSquare, Sparkles } from "lucide-react";
 export default function CTASection() {
   return (
     <section className="py-24 bg-[#000000] text-[#ffffff] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* VIBRANT CONTINUOUS MOVING AMBIENT BACKGROUND */}
+
+      {/* 1. Primary Gold Ambient Glowing Orb */}
+      <motion.div
+        animate={{
+          x: [-100, 100, -100],
+          y: [-60, 75, -60],
+          scale: [0.95, 1.2, 0.95],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#c5a059]/25 via-amber-500/15 to-[#9a7b38]/20 rounded-full blur-[140px] pointer-events-none z-0"
+      />
+
+      {/* 2. Moving Grid Pattern */}
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "48px 48px"],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05915_1px,transparent_1px),linear-gradient(to_bottom,#c5a05915_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none z-0"
+      />
+
+      {/* 3. Floating Golden Light Dust Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{
+              x: (i - 4) * 130,
+              y: 500,
+              opacity: 0,
+            }}
+            animate={{
+              y: [-20, -550],
+              opacity: [0, 0.8, 0],
+              x: [(i - 4) * 130, (i - 4) * 130 + (i % 2 === 0 ? 30 : -30)],
+            }}
+            transition={{
+              duration: 7 + i * 1,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: i * 0.6,
+            }}
+            className="absolute bottom-0 left-1/2 w-1.5 h-1.5 rounded-full bg-[#fef08a] shadow-[0_0_10px_#c5a059]"
+          />
+        ))}
+      </div>
         
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Large Gradient Card Banner */}
         <div className="relative rounded-3xl overflow-hidden p-8 sm:p-16 text-center border border-white/15 shadow-2xl glass-panel group hover:border-[#c5a059]/60 hover:shadow-[0_10px_40px_rgba(197,160,89,0.25)] transition-all duration-300">
 

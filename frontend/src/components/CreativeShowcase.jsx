@@ -9,8 +9,8 @@ const SHOWCASE_ITEMS = [
     type: "Website Mockup",
     icon: Layout,
     accent: "from-sky-500/30 via-indigo-600/30 to-purple-600/40",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop",
     border: "border-sky-500/30",
-    ratio: "aspect-[16/10]",
     details: "Interactive Glass Dashboard with High Performance",
   },
   {
@@ -18,8 +18,8 @@ const SHOWCASE_ITEMS = [
     type: "Thumbnail Design",
     icon: Sparkles,
     accent: "from-pink-500/30 via-rose-600/30 to-red-600/40",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
     border: "border-pink-500/30",
-    ratio: "aspect-[16/9]",
     details: "3D Visual Expression & Dynamic Typography",
   },
   {
@@ -27,8 +27,8 @@ const SHOWCASE_ITEMS = [
     type: "Brand Logo",
     icon: Palette,
     accent: "from-amber-500/30 via-orange-600/30 to-yellow-600/40",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop",
     border: "border-amber-500/30",
-    ratio: "aspect-square",
     details: "Scalable Vector Emblem & Color Palette",
   },
   {
@@ -36,8 +36,8 @@ const SHOWCASE_ITEMS = [
     type: "Social Media",
     icon: Layers,
     accent: "from-[#c5a059]/30 via-amber-600/30 to-[#9a7b38]/40",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1000&auto=format&fit=crop",
     border: "border-[#c5a059]/30",
-    ratio: "aspect-square",
     details: "High-Converting Instagram Carousel Templates",
   },
   {
@@ -45,8 +45,8 @@ const SHOWCASE_ITEMS = [
     type: "Video Production",
     icon: Video,
     accent: "from-[#c5a059]/30 via-amber-600/30 to-[#9a7b38]/40",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop",
     border: "border-[#c5a059]/30",
-    ratio: "aspect-[16/9]",
     details: "Kinetic Typography & Sound Design",
   },
   {
@@ -54,8 +54,8 @@ const SHOWCASE_ITEMS = [
     type: "UI/UX Screen",
     icon: ImageIcon,
     accent: "from-cyan-500/30 via-blue-600/30 to-sky-600/40",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
     border: "border-cyan-500/30",
-    ratio: "aspect-[16/10]",
     details: "iOS Mobile Design System & Haptic Flow",
   },
 ];
@@ -124,19 +124,25 @@ export default function CreativeShowcase() {
               >
 
                 {/* Background visual canvas */}
-                <div
-                  className={`w-full ${item.ratio} rounded-2xl bg-gradient-to-br ${item.accent} p-4 border border-white/10 flex flex-col justify-between relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 mb-6`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-black/60 text-[#c5a059] backdrop-blur-md border border-[#c5a059]/30">
+                <div className="w-full h-56 rounded-2xl p-4 border border-white/10 flex flex-col justify-between relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 mb-6">
+                  {/* Clear & Vivid Background Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
+
+                  <div className="flex items-center justify-between z-10">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-black/70 text-[#c5a059] backdrop-blur-md border border-[#c5a059]/30">
                       {item.type}
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-[#c5a059] backdrop-blur-md">
+                    <div className="w-8 h-8 rounded-full bg-black/70 border border-white/10 flex items-center justify-center text-[#c5a059] backdrop-blur-md">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <div className="bg-black/70 backdrop-blur-md p-3 rounded-xl border border-white/15">
+                  <div className="z-10 bg-black/75 backdrop-blur-md p-3 rounded-xl border border-white/15">
                     <p className="text-xs font-serif font-semibold text-white">{item.details}</p>
                   </div>
                 </div>

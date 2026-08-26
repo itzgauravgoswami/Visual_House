@@ -188,28 +188,6 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-
-            {/* Quick Guarantees */}
-            <div className="p-6 rounded-2xl bg-[#111111] border border-[#c5a059]/20 space-y-3">
-              <h4 className="font-serif text-sm font-bold text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#c5a059]" />
-                Visual House Guarantee
-              </h4>
-              <ul className="space-y-2 text-xs text-zinc-300">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  <span>Direct communication with senior creative directors</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  <span>Fixed-scope transparent project quotes with no hidden fees</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059]" />
-                  <span>100% IP ownership on all completed design and code files</span>
-                </li>
-              </ul>
-            </div>
           </div>
 
           {/* Right Column — Project Form */}
